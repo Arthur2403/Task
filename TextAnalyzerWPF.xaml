@@ -1,0 +1,34 @@
+﻿<Window x:Class="TextAnalyzerWPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Аналізатор тексту" Height="650" Width="600">
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
+        <StackPanel Margin="20">
+            <TextBlock Text="Введіть текст:" FontWeight="Bold" FontSize="14"/>
+            <TextBox x:Name="TextBoxInput" Height="100" TextWrapping="Wrap" AcceptsReturn="True" Margin="0,5,0,15"/>
+
+            <TextBlock Text="Оберіть, що аналізувати:" FontWeight="Bold" FontSize="14"/>
+            <StackPanel Margin="10,5,0,10">
+                <CheckBox x:Name="CheckBoxCharacterCount" Content="Кількість символів"/>
+                <CheckBox x:Name="CheckBoxWordCount" Content="Кількість слів"/>
+                <CheckBox x:Name="CheckBoxSentenceCount" Content="Кількість речень"/>
+                <CheckBox x:Name="CheckBoxQuestionCount" Content="Питальні речення"/>
+                <CheckBox x:Name="CheckBoxExclamationCount" Content="Окличні речення"/>
+            </StackPanel>
+
+            <TextBlock Text="Куди вивести результат:" FontWeight="Bold" FontSize="14"/>
+            <StackPanel Margin="10,5,0,10">
+                <CheckBox x:Name="CheckBoxOutputToScreen" Content="На екран"/>
+                <CheckBox x:Name="CheckBoxOutputToFile" Content="У файл"/>
+            </StackPanel>
+
+            <Button x:Name="ButtonStartPause" Content="▶ Старт"
+                    Width="140" Height="40" Click="ButtonStartPause_Click" Margin="0,10,0,10"/>
+
+            <TextBox x:Name="TextBoxOutput" Height="150" TextWrapping="Wrap"
+                     AcceptsReturn="True" VerticalScrollBarVisibility="Auto"
+                     IsReadOnly="True" FontFamily="Consolas"/>
+        </StackPanel>
+    </ScrollViewer>
+</Window>
+
